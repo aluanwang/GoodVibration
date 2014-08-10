@@ -1,4 +1,4 @@
-#N canvas 833 22 393 337 10;
+#N canvas 685 382 393 337 10;
 #X declare -lib mrpeach;
 #X declare -lib jasch_lib;
 #X declare -path abs;
@@ -540,7 +540,7 @@
 #X connect 14 0 2 0;
 #X restore 177 326 pd color;
 #X obj 106 152 hsl 70 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 6900 1;
+-1 -1 445 1;
 #X obj 22 245 line;
 #X msg 22 223 \$1 9000;
 #N canvas 0 22 450 300 mask 0;
@@ -570,7 +570,7 @@
 #X connect 11 0 10 0;
 #X connect 12 0 5 4;
 #X restore 21 187 pd mask;
-#X obj 104 119 tgl 30 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 104 119 tgl 30 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 138 136 tgl 15 0 empty empty HID 17 7 0 10 -262144 -1 -1 1 1
 ;
@@ -871,7 +871,7 @@
 #X msg 186 -431 0;
 #X obj 248 -503 r hid;
 #X obj 248 -367 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 248 -479 route key_22;
 #X obj 100 -247 translateXYZ 0 -3.2 0;
 #X obj 80 -10 loadbang;
@@ -1544,7 +1544,7 @@
 #X obj 285 373 rectangle 15 2;
 #X obj 286 1 translateXYZ -4.05 -3.25 0;
 #X obj 122 -173 r hid;
-#X obj 122 -69 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 122 -69 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 122 -149 route key_4;
 #X obj 360 258 text2d;
@@ -1967,7 +1967,7 @@
 #X obj 601 42 line;
 #X obj 581 -109 sel 0 1;
 #X obj 650 88 hsl 30 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 85 1;
+-1 -1 164 1;
 #X floatatom 647 64 5 0 0 0 - - -;
 #X msg 606 -31 0 \, 1 1000;
 #X msg 630 -1 1 \, 0 1000;
@@ -2734,7 +2734,7 @@
 #X connect 26 0 19 0;
 #X connect 27 0 8 0;
 #X restore 127 31 pd outline;
-#X obj 46 -169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 46 -169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj -88 72 separator;
 #N canvas 501 92 939 629 corner 0;
@@ -2757,7 +2757,7 @@
 #X msg 365 211 draw fill;
 #X obj 236 226 color 0 0 0;
 #X msg 385 150 0 0 0;
-#X msg 288 178 0.2 0.3 0.7;
+#X msg 288 178 0 0 0;
 #X obj 232 -39 translateXYZ 7.1 -3.1 0;
 #X msg 601 267 -2 -1 0;
 #X msg 575 228 -1.2 0 0;
@@ -2939,7 +2939,7 @@
 #X msg 215 318 draw fill;
 #X obj 86 333 color 0 0 0;
 #X msg 235 257 0 0 0;
-#X msg 138 285 0.2 0.3 0.7;
+#X msg 138 285 0 0 0;
 #X obj 257 27 r W_H;
 #X obj 257 52 unpack f f;
 #X obj 257 75 /;
@@ -3717,7 +3717,7 @@ const 0 \;;
 1;
 #X obj -16 11 sel 1;
 #X msg -16 34 0;
-#X obj 89 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 89 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X msg -16 62 \; b-s const 0 \; b-x const 0 \; b-y const 0 \;;
 #X obj 269 -40 sel 1;
@@ -4112,7 +4112,7 @@ const 0 \;;
 #X connect 109 0 85 0;
 #X restore 356 80 pd polygon;
 #X msg 123 279 885 500;
-#X msg 85 343 640 300;
+#X msg 85 343 885 500;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 2 1 78 0;
@@ -4179,7 +4179,7 @@ const 0 \;;
 #X obj 180 300 loadbang;
 #X obj 350 166 f;
 #X obj 260 349 spigot;
-#X obj 308 351 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 308 351 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj -196 261 t b a;
 #X obj -196 348 t a b;
@@ -4188,7 +4188,7 @@ const 0 \;;
 #X msg -169 369 0;
 #X obj 261 73 pix_buffer \$0-temp 1;
 #X obj 105 120 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 3;
 #X obj 308 323 > 0;
 #X obj 466 306 sel 1 2 3 4;
 #X msg 484 361 open glsl/Halftone.frag;
@@ -4226,7 +4226,7 @@ const 0 \;;
 #X msg 11 364 0;
 #X obj -16 342 t a b;
 #X obj -16 462 pix_texture;
-#X msg 329 270 iResolution 1440 700;
+#X msg 329 270 iResolution 640 300;
 #X obj 111 325 loadbang;
 #X msg 111 349 rectangle 0 \, texunit 0;
 #X msg 29 271 dimen 1000 1000;
@@ -4517,8 +4517,8 @@ const 0 \;;
 #X obj -193 12 scan 1;
 #X obj -88 211 k_time;
 #N canvas 89 54 669 657 boids 0;
-#X obj 109 116 tgl 30 0 empty empty empty 17 7 0 10 -233017 -1 -262144
-0 1;
+#X obj 109 116 tgl 30 0 empty empty empty 17 7 0 10 -258699 -1 -262144
+1 1;
 #X msg 39 172 color \$1;
 #X obj 40 119 sel 0 1;
 #X msg 70 146 13;
