@@ -1,6 +1,6 @@
 
 uniform sampler2D iChannel0;
-uniform float iGlobalTime;
+uniform float time;
 uniform float alpha;
 uniform sampler2D tex1;
 uniform sampler2D tex2;
@@ -8,10 +8,8 @@ uniform sampler2D tex3;
 uniform sampler2D tex4;
 uniform sampler2D tex5;
 
-uniform vec3 iResolution; 
+uniform vec3 dimen; 
 
-
-float time=0.0;
 float no;
 vec2 uv = gl_FragCoord.xy;
 
@@ -54,7 +52,7 @@ vec4 a5(float n, vec2 p) {
 
 float rand(vec2 co){
     return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
-}
+}dimen
 
 
 
@@ -65,11 +63,11 @@ void main()
 	vec4 a,b,c,d;
 	
 	
-	col = texture2D(iChannel0, floor(uv/7.0)*7.0/iResolution.xy).rgb;		
+	col = texture2D(iChannel0, floor(uv/7.0)*7.0/dimen.xy).rgb;		
 	gray = (col.r*0.33)+ (col.g*0.33)+ (col.b*0.33);            
 	if(gray>0.2){
 		
-		time=gray*rand(floor(uv/7.0)*7.0/iResolution.xy);		
+		time=gray*rand(floor(uv/7.0)*7.0/dimen.xy);		
 		
 		
 		a=a5(7.0,uv);
@@ -79,10 +77,10 @@ void main()
 	}
 	
 	
-	col = texture2D(iChannel0, floor(uv/10.0)*10.0/iResolution.xy).rgb;		
+	col = texture2D(iChannel0, floor(uv/10.0)*10.0/dimen.xy).rgb;		
 	gray = (col.r*0.33)+ (col.g*0.33)+ (col.b*0.33);        
 	if(gray>0.35){
-		time=gray*rand(floor(uv/10.0)*10.0/iResolution.xy);		
+		time=gray*rand(floor(uv/10.0)*10.0/dimen.xy);		
 		
 		
 		a=a2(10.0,uv);
@@ -91,10 +89,10 @@ void main()
 	}
 	
 	
-	col = texture2D(iChannel0, floor(uv/20.0)*20.0/iResolution.xy).rgb;		
+	col = texture2D(iChannel0, floor(uv/20.0)*20.0/dimen.xy).rgb;		
 	gray = (col.r*0.33)+ (col.g*0.33)+ (col.b*0.33);        
 	if(gray>0.5){
-		time=gray*rand(floor(uv/20.0)*20.0/iResolution.xy);		
+		time=gray*rand(floor(uv/20.0)*20.0/dimen.xy);		
 		
 		if(time<0.3){
 			a=a5(20.0,uv);
@@ -106,10 +104,10 @@ void main()
 	}
 
 	
-	col = texture2D(iChannel0, floor(uv/30.0)*30.0/iResolution.xy).rgb;		
+	col = texture2D(iChannel0, floor(uv/30.0)*30.0/dimen.xy).rgb;		
 	gray = (col.r*0.33)+ (col.g*0.33)+ (col.b*0.33);         
 	if(gray>0.7){
-		time=gray*rand(floor(uv/30.0)*30.0/iResolution.xy);		
+		time=gray*rand(floor(uv/30.0)*30.0/dimen.xy);		
 		
 		if(time<0.16){
 			a=a1(30.0,uv);
@@ -128,10 +126,10 @@ void main()
 	}
 	
 	
-	col = texture2D(iChannel0, floor(uv/60.0)*60.0/iResolution.xy).rgb;		
+	col = texture2D(iChannel0, floor(uv/60.0)*60.0/dimen.xy).rgb;		
 	gray = (col.r*0.33)+ (col.g*0.33)+ (col.b*0.33);         
 	if(gray>0.85){
-		time=gray*rand(floor(uv/60.0)*60.0/iResolution.xy);		
+		time=gray*rand(floor(uv/60.0)*60.0/dimen.xy);		
 		
 		if(time<0.16){
 			a=a1(60.0,uv);
@@ -147,8 +145,6 @@ void main()
 		a.rgb=vec3(1.0-a.rgb)*1.0;
 		a.a=1.0;	
 	}
-
-	float time=iGlobalTime;
 
 	gl_FragColor = vec4(a.r,a.g,a.b,alpha);
 }
